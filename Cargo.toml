@@ -1,0 +1,17 @@
+[package]
+name = "amethyst_wasm"
+version = "0.1.0"
+authors = ["Joël Lupien (Jojolepro) <jojolepromain@gmail.com>"]
+edition = "2018"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+specs = "0.15.0"
+web_worker = "0.2.0"
+wasm-bindgen = { version = "0.2.56", features = ['serde-serialize'] }
+#amethyst = { path = "../amethyst", branch = "wasm", default-features = false, features = [] }
+amethyst = { path = "../amethyst", branch = "wasm", default-features = false, features = ["animation", "locale", "network", "renderer"] }
+#wasm-bindgen = { path = "./wasm-bindgen", features = ['serde-serialize'] }
+
